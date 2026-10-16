@@ -1,1 +1,16 @@
-Rental Car Calculator
+Rental Car Calculator Plan
+
+Prompt the user for:
+  - Pick up date as a string
+  - number of days for the rental as a short
+  - toll tag option as a char (y/n) (toll tag is $3.95/day)
+  - gps option as a char (y/n) (2.95/day)
+  - roadside assistance char (y/n) (3.95)
+  - current age
+
+Calculate and display
+  - Basic package ($29.99/day)
+  - Cost of options
+  - Underage surcharge (30% on top of basic for under 25)
+  - total cost
+  - TAXES are included
