@@ -14,3 +14,7 @@ Calculate and display
   - Underage surcharge (30% on top of basic for under 25)
   - total cost
   - TAXES are included
+
+  main() -
+  gatherCustomerInfo() - contain all the functionality to collect the user's information
+  displaySelections() - output the options the user selected, with pricing, and estimated total cost
