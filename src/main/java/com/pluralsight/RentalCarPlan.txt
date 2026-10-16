@@ -18,3 +18,6 @@ Calculate and display
   main() -
   gatherCustomerInfo() - contain all the functionality to collect the user's information
   displaySelections() - output the options the user selected, with pricing, and estimated total cost
+
+
+  formatCustomerInfo() - method to format customer data to pass to displaySelections()?

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class RentalCarCalculator {
     public static void main(String[] args) {
         gatherCustomerInfo();
-
+        displaySelections();
     }
 
     // gatherCustomerInfo(): Collect customer info and package choices
@@ -38,7 +38,7 @@ public class RentalCarCalculator {
 
         // Read toll tag selection
         System.out.println("Would you like to include a toll tag ($3.95/day fee) (y/n): ");
-        String tollTagChoice = scanner.nextLine();  // I want to do a char, but no input option?
+        String tollTagChoice = scanner.nextLine();
 
         // Read gps selection
         System.out.println("Would you like to include a gps ($2.95/day fee) (y/n): ");
@@ -49,5 +49,11 @@ public class RentalCarCalculator {
         String roadsideAssistChoice = scanner.nextLine();
 
         System.out.println(customerName);
+    }
+
+    // displaySelections(): Display the data the customer has input
+    public static void displaySelections(String name, int age, String date, short days, String tag, String gps, String assist) {
+        System.out.println("Hello " + name);
+
     }
 }
