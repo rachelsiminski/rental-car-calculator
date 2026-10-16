@@ -1,11 +1,12 @@
 package com.pluralsight;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class RentalCarCalculator {
     public static void main(String[] args) {
         gatherCustomerInfo();
-        displaySelections();
+        //displaySelections();
     }
 
     // gatherCustomerInfo(): Collect customer info and package choices
@@ -51,9 +52,36 @@ public class RentalCarCalculator {
         System.out.println(customerName);
     }
 
-    // displaySelections(): Display the data the customer has input
-    public static void displaySelections(String name, int age, String date, short days, String tag, String gps, String assist) {
-        System.out.println("Hello " + name);
+    // formatCustomerInfo(): Take user data from gatherCustomerInfo() and format for display
+    public static String formatCustomerInfo(String name, int age, String date, short days, String tag, String gps, String assist) {
+        boolean isOfAge = age > 25;
+        boolean isTollTag = tag.equals("y");
+        boolean isGps = gps.equals("y");
+        boolean isAssist = assist.equals("y");
+        double packagePrice = 29.99;
+        double extraFees = 0;
 
+        if (!isOfAge) {
+            double underageSurcharge = packagePrice * .3;  // Add 30% surcharge for under 25
+        }
+        if (isTollTag) {
+            double perDiemToll = days * 3.95;
+        }
+        if (isGps) {
+            double perDiemGps = days * 2.95;
+        }
+        if (isAssist) {
+            double perDiemAssist = days * 3.95;
+        }
+
+        extraFees =
+
+        String customerPackageInfo = "Hello " + name + "\n"
     }
+
+    // displaySelections(): Display the data the customer has input
+//    public static void displaySelections(String name, int age, String date, short days, String tag, String gps, String assist) {
+//        System.out.println("Hello " + name);
+//
+//    }
 }
