@@ -1,6 +1,5 @@
 package com.pluralsight;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class RentalCarCalculator {
@@ -50,10 +49,12 @@ public class RentalCarCalculator {
         String roadsideAssistChoice = scanner.nextLine();
 
         System.out.println(customerName);
+
+        formatCustomerInfo(customerName, customerAge, pickupDate, numberOfDays, tollTagChoice, gpsChoice, roadsideAssistChoice);
     }
 
     // formatCustomerInfo(): Take user data from gatherCustomerInfo() and format for display
-    public static String formatCustomerInfo(String name, int age, String date, short days, String tag, String gps, String assist) {
+    public static void formatCustomerInfo(String name, int age, String date, short days, String tag, String gps, String assist) {
         boolean isOfAge = age > 25;
         boolean isTollTag = tag.equals("y");
         boolean isGps = gps.equals("y");
@@ -63,20 +64,23 @@ public class RentalCarCalculator {
 
         if (!isOfAge) {
             double underageSurcharge = packagePrice * .3;  // Add 30% surcharge for under 25
+            packagePrice += underageSurcharge;
         }
         if (isTollTag) {
             double perDiemToll = days * 3.95;
+            packagePrice += perDiemToll;
         }
         if (isGps) {
             double perDiemGps = days * 2.95;
+            packagePrice += perDiemGps;
         }
         if (isAssist) {
             double perDiemAssist = days * 3.95;
+            packagePrice += perDiemAssist;
         }
 
-        extraFees =
-
-        String customerPackageInfo = "Hello " + name + "\n"
+        System.out.println(packagePrice);
+        // String customerPackageInfo = "Hello " + name + "\nYour chosen package inclues:\n" + " - $" +
     }
 
     // displaySelections(): Display the data the customer has input
