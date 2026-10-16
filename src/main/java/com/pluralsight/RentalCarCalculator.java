@@ -60,32 +60,36 @@ public class RentalCarCalculator {
         boolean isGps = gps.equals("y");
         boolean isAssist = assist.equals("y");
         double packagePrice = 29.99;
-        double extraFees = 0;
+
+        System.out.println("Hello " + name);
+        System.out.println("Pickup date: " + date + " -- " + days + " day rental.");
 
         if (!isOfAge) {
             double underageSurcharge = packagePrice * .3;  // Add 30% surcharge for under 25
             packagePrice += underageSurcharge;
+            System.out.printf("Underage surcharge: $%.2f\n", underageSurcharge);
         }
         if (isTollTag) {
             double perDiemToll = days * 3.95;
             packagePrice += perDiemToll;
+            System.out.printf("Toll tag total: $%.2f\n", perDiemToll);
         }
         if (isGps) {
             double perDiemGps = days * 2.95;
             packagePrice += perDiemGps;
+            System.out.printf("GPS total: $%.2f\n", perDiemGps);
         }
         if (isAssist) {
             double perDiemAssist = days * 3.95;
             packagePrice += perDiemAssist;
+            System.out.printf("Roadside assistance total: $%.2f\n", perDiemAssist);
         }
 
-        System.out.println(packagePrice);
-        // String customerPackageInfo = "Hello " + name + "\nYour chosen package inclues:\n" + " - $" +
-    }
+        System.out.printf("Total cost: $%.2f", packagePrice);
 
-    // displaySelections(): Display the data the customer has input
-//    public static void displaySelections(String name, int age, String date, short days, String tag, String gps, String assist) {
-//        System.out.println("Hello " + name);
-//
-//    }
+
+
+
+
+    }
 }
