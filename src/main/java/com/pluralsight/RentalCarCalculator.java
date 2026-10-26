@@ -55,7 +55,7 @@ public class RentalCarCalculator {
 
     // formatCustomerInfo(): Take user data from gatherCustomerInfo() and format for display
     public static void formatCustomerInfo(String name, int age, String date, short days, String tag, String gps, String assist) {
-        boolean isOfAge = age > 25;
+        boolean isUnderage = age < 25;  // Change to underage
         boolean isTollTag = tag.equals("y");
         boolean isGps = gps.equals("y");
         boolean isAssist = assist.equals("y");
@@ -64,8 +64,8 @@ public class RentalCarCalculator {
         System.out.println("Hello " + name);
         System.out.println("Pickup date: " + date + " -- " + days + " day rental.");
 
-        if (!isOfAge) {
-            double underageSurcharge = packagePrice * .3;  // Add 30% surcharge for under 25
+        if (isUnderage) {   // Change to account for underage instead of over age
+            double underageSurcharge = (packagePrice * days) * .3;  // Add 30% surcharge for under 25 (Fix calculation)
             packagePrice += underageSurcharge;
             System.out.printf("Underage surcharge: $%.2f\n", underageSurcharge);
         }
@@ -86,10 +86,5 @@ public class RentalCarCalculator {
         }
 
         System.out.printf("Total cost: $%.2f", packagePrice);
-
-
-
-
-
     }
 }
